@@ -23,6 +23,10 @@ func (p Person) Valid() error {
 	}
 	strings.TrimSuffix(msg, ", ")
 
+	if p.Age < 0 {
+		msg += "Age cannot be zero"
+	}
+
 	if len(msg) > 0 {
 		return errors.New(msg)
 	}
