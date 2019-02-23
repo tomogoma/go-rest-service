@@ -1,0 +1,12 @@
+* Building Rest APIs in Go
+.image splash.jpeg
+
+* Presenter
+
+Tom Ogoma
+Senior Software Engineer, Andela
+
+* Agenda
+- Vendoring in Go
+- Building a Rest API
+- Deploying to Heroku
