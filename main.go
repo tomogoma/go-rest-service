@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 )
@@ -23,7 +24,8 @@ func main() {
 	r.PathPrefix("/persons").Methods(http.MethodGet).HandlerFunc(HandleGetPersons)
 	r.PathPrefix("/persons").Methods(http.MethodPost).HandlerFunc(HandleCreatePerson)
 
-	addr := ":9000"
+	port := os.Getenv("PORT")
+	addr := ":" + port
 	log.Printf("Server is listening at %s", addr)
 	err := http.ListenAndServe(addr, r)
 	log.Printf("Server stopped with error: %v", err)
